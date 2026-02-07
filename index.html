@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FIREla - Your Financial Data, Your Control</title>
-    <meta name="description" content="FIREla - Take back sovereignty of your personal financial data. Open-source, self-hosted, you own your data.">
+    <title>FIREla</title>
+    <meta name="description" content="Your financial data. Your control.">
     <style>
         * {
             margin: 0;
@@ -15,145 +15,149 @@
             --primary: #FF7F3F;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-            background: #fff;
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Droid Sans Mono', 'Source Code Pro', monospace;
+            line-height: 1.7;
+            color: #111;
+            background: #fafafa;
         }
         .container {
-            max-width: 900px;
+            max-width: 680px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
         header {
             min-height: 100vh;
             display: flex;
-            align-items: center;
+            flex-direction: column;
             justify-content: center;
-            text-align: center;
-            padding: 60px 20px;
+            padding: 120px 0;
         }
         .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 24px;
-            margin: 0 auto 40px;
-            box-shadow: 0 8px 30px rgba(255, 127, 63, 0.3);
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+            opacity: 0.9;
         }
         h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 30px;
-            color: var(--primary);
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            margin-bottom: 32px;
+            color: #666;
         }
         .tagline {
-            font-size: 1.8rem;
-            color: #333;
-            margin-bottom: 60px;
+            font-size: 2rem;
             font-weight: 500;
+            color: #111;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
         }
         .value-prop {
-            font-size: 1.3rem;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto 50px;
-            line-height: 1.8;
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 48px;
+            max-width: 520px;
         }
         .highlight {
             color: var(--primary);
-            font-weight: 600;
         }
-        .cta-button {
+        .cta-link {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 18px 50px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 4px 20px rgba(255, 127, 63, 0.4);
-        }
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 30px rgba(255, 127, 63, 0.5);
-        }
-        .why {
-            padding: 100px 0;
-            text-align: center;
-        }
-        .why h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #1a1a1a;
-        }
-        .why p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            color: #999;
-            font-size: 0.9rem;
-        }
-        footer a {
             color: var(--primary);
             text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid var(--primary);
+            padding-bottom: 2px;
+            transition: opacity 0.2s;
+        }
+        .cta-link:hover {
+            opacity: 0.7;
+        }
+        .arrow {
+            display: inline-block;
+            margin-left: 4px;
+            transition: transform 0.2s;
+        }
+        .cta-link:hover .arrow {
+            transform: translateX(4px);
+        }
+        .section {
+            padding: 80px 0;
+            border-top: 1px solid #e5e5e5;
+        }
+        .section-label {
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+        }
+        .section-content {
+            font-size: 0.95rem;
+            color: #666;
+            max-width: 520px;
+        }
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid #e5e5e5;
+        }
+        footer a {
+            color: #999;
+            text-decoration: none;
+            font-size: 0.85rem;
+            margin-right: 24px;
+        }
+        footer a:hover {
+            color: var(--primary);
         }
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.8rem;
-            }
             .tagline {
-                font-size: 1.4rem;
+                font-size: 1.6rem;
             }
-            .value-prop {
-                font-size: 1.1rem;
-            }
-            .logo {
-                width: 100px;
-                height: 100px;
+            header {
+                padding: 80px 0;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <img src="https://avatars.githubusercontent.com/u/235206218?s=400&u=fe70db81e306cbd0028ebba4ef1bfee04794d3d9&v=4" alt="FIREla Logo" class="logo">
-            <h1>FIREla</h1>
-            <p class="tagline">Your Financial Data, Your Control</p>
+    <div class="container">
+        <header>
+            <img src="https://avatars.githubusercontent.com/u/235206218?s=400&u=fe70db81e306cbd0028ebba4ef1bfee04794d3d9&v=4" alt="FIREla" class="logo">
+            <h1>git clone https://github.com/fire-la</h1>
+            <p class="tagline">Your financial data.<br>Your <span class="highlight">control</span>.</p>
             <p class="value-prop">
-                Most financial apps own <em>your</em> data. <br>
-                With <span class="highlight">FIREla</span>, <span class="highlight">you own your data</span>.<br>
+                Most financial apps own your data. 
+                With <span class="highlight">FIREla</span>, you own your data.
                 Open source. Self-hosted. No vendor lock-in.
             </p>
-            <a href="https://github.com/fire-la" class="cta-button">
-                Take Back Control →
+            <a href="https://github.com/fire-la" class="cta-link">
+                Get started<span class="arrow">→</span>
             </a>
-        </div>
-    </header>
+        </header>
 
-    <section class="why">
-        <div class="container">
-            <h2>Why Data Sovereignty Matters</h2>
-            <p>
+        <section class="section">
+            <p class="section-label">Why</p>
+            <p class="section-content">
                 Your financial data is among your most personal information. 
                 It shouldn't be held hostage by a closed platform you can't export from, 
                 inspect, or fork away from.
             </p>
-        </div>
-    </section>
+        </section>
 
-    <footer>
-        <div class="container">
-            <p><a href="https://github.com/fire-la">GitHub</a> · <a href="https://firela.io">firela.io</a></p>
-        </div>
-    </footer>
+        <section class="section">
+            <p class="section-label">How</p>
+            <p class="section-content">
+                Open source. Self-hosted. Beancount-based. 
+                Your data lives in plain text that you control.
+            </p>
+        </section>
+
+        <footer>
+            <a href="https://github.com/fire-la">GitHub</a>
+            <a href="https://firela.io">firela.io</a>
+        </footer>
+    </div>
 </body>
 </html>
